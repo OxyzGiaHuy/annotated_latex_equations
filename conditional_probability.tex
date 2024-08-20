@@ -1,0 +1,17 @@
+\begin{equation*}
+    \label{eq:ab_crypto}
+    \hspace*{-6em}
+    P(R = r | S = s) = \dfrac{\tikzmarknode{count1}{\highlight{blue}{$P(S = s | R = r)$}} \cdot \tikzmarknode{count2}{\highlight{red}{$P(R = r)$}}}{\tikzmarknode{total}{\highlight{green}{$P(S = s)$}}}
+\end{equation*}
+\vspace*{0.8\baselineskip}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+
+    \path (count1.north) ++ (0,1.8em) node[anchor=south east,color=Plum!85] (count1text){\textsf{\footnotesize Counting the number of times "S=s" when "R=r"}};
+    \draw [color=Plum](count1.north) |- ([xshift=-0.3ex,color=Plum]count1text.south west);
+
+    \path (count2.north) ++ (0,2em) node[anchor=south west,color=red!67] (c2){\textbf{\footnotesize Counting the number of times "R=r"}};
+    \draw [color=red!57](count2.north) |- ([xshift=-0.3ex,color=red]c2.south east);
+
+    \path (total.north) ++ (0.3,-1.8em) node[anchor=north west,color=xkcdHunterGreen!85] (ttext){\textsf{\footnotesize Use total probability:} $\sum P(S=s|R=r_i) \cdot P(R=r_i)$};
+    \draw [color=xkcdHunterGreen](total.south) |- ([xshift=-0.3ex,color=xkcdHunterGreen]ttext.south east);
+\end{tikzpicture}
